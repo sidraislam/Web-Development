@@ -1,0 +1,409 @@
+/*font import*/
+/*TEKO FONT*/
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+
+/*LATO FONT*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+* { /*default setting*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*font adjustments*/
+h1, a, button {
+    font-family: "Teko", serif;
+    font-style: normal;
+}
+
+p {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+}
+
+
+
+
+:root { /*variable settings*/
+    --small-spacing: 1rem;
+    --large-spacing-laptop: 3rem;
+    --large-spacing-tablet: 2rem;
+    --large-spacing-phone: 1rem;
+
+    --header-font-phone: 2em;
+    --header-font-tab-desk: 3em;
+    --button-font: 2em;
+    --movie-cont-font: 1.5em;
+
+    
+    --bg-color: #231651;
+    --text-color: white;
+    --text-color-2: #070410;
+}
+
+body { /*backgound setting*/
+    background-color: var(--text-color-2);
+    margin: 0;
+    padding: 0;
+    
+}
+/*header and navigation bar*/
+header {
+    box-sizing: border-box;
+    width: 100%;
+    padding: var(--small-spacing);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color: var(--bg-color);      
+    color: var(--text-color);
+}
+
+header .title { /*title css for the watch.it element*/
+    color: var(--text-color);
+    /*sets font*/
+    font-family: "Teko", serif;
+    font-size: var(--header-font-tab-desk);
+}
+
+
+/*navbar*/
+
+
+nav { /*sets font for the navbar*/
+    font-family: "Teko", serif;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+nav ul{ 
+    list-style: none;
+    display: flex;
+}
+
+nav li { /*adjusts spacing*/
+    padding: var(--small-spacing);
+}
+
+nav ul li a { /*navbar text adjustment*/
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 2em;
+}
+
+
+
+
+/*button right*/
+
+header button { /*main button adjustment*/
+    font-size: var(--header-font-tab-desk);
+    font-family: "Teko", serif;
+    border: none;
+    border-radius: var(--small-spacing);
+    height: fit-content;
+}
+
+header button a { /*button text adjustment*/
+    color: var(--text-color-2);
+    text-decoration: none;
+
+    padding: var(--large-spacing-laptop);
+    box-sizing: border-box;
+}
+
+
+/*movie posters main*/
+
+main { /*main container adjustment*/
+    /*measurement adjustment*/
+    max-width: 900px;
+    margin: var(--large-spacing-laptop) auto;
+    gap: 1.5rem;
+    /*grid adjustment*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "poster1 poster1"
+        "poster2 poster3"
+        "poster4 poster4"
+        "poster5 poster5"
+        "poster6 poster6";
+}
+
+.poster-cont-main {
+    /*design specification*/
+    background-color: var(--bg-color);
+    /*display specification*/
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-between;
+    /*measurement specification*/
+    margin: var(--small-spacing);
+}
+
+.poster-cont-main img { /*images adjustment for all containers*/
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.poster-cont-main div { /*padding adjustment for all containers*/
+    padding: var(--small-spacing);
+}
+
+.poster-cont-main p { /*movie text adjustment*/
+    color: var(--text-color);
+    font-family: "Lato", serif;   
+    font-size: var(--movie-cont-font); 
+}
+
+.poster-cont-main button { /*button adjustment*/
+    padding: var(--small-spacing);
+    width: 100%;
+    background-color: var(--text-color);
+    border: none;
+    border-radius: var(--small-spacing);
+    cursor: pointer;
+    font-size: 3em;
+
+}
+
+
+.poster-cont-main button a { /*button text adjustment*/
+    text-decoration: none;
+    color: var(--text-color-2);
+}
+
+/*poster grid assign*/
+.poster-one { 
+    grid-area: poster1; 
+}
+.poster-two { 
+    grid-area: poster2; 
+}
+.poster-three { 
+    grid-area: poster3; 
+}
+.poster-four { 
+    grid-area: poster4; 
+}
+.poster-five { 
+    grid-area: poster5; 
+}
+.poster-six { 
+    grid-area: poster6; 
+}
+
+/*first poster extra adjustment*/
+
+.poster-one { /*first poster display adjustment*/
+    display: flex;
+    flex-direction: column;
+}
+.poster-one img { /*first poster image adjustment*/
+    height: 25rem;
+}
+.poster-one .poster-info { /*text and button adjustment*/
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+
+
+/*last three posters*/
+
+.poster-four, .poster-five, .poster-six { /*poster display adjustment*/
+    display: flex;
+    flex-direction: row;
+}
+
+.poster-four img, .poster-five img, .poster-six img { /*poster image adjustment*/
+    width: 45%;
+}
+
+.poster-four .poster-info, .poster-five .poster-info, .poster-six .poster-info { /*text and button poster adjustment for display and measurement*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--small-spacing);
+
+    text-align: left;   
+}
+
+/*MEDIA QUERY*/
+
+/*tablet query*/
+@media screen and (max-width: 720px) {
+    /*header*/
+    header {
+        font-size: 0.6em;
+    }
+
+    header button {
+        border-radius: 0.5rem;
+    }
+
+    nav {
+        padding: 0.5rem;
+        font-size: 1em;
+    }
+
+    /*main*/
+
+    main { /*sets overall grid to have 2 columns and 3 rows*/
+        margin: var(--large-spacing-tablet) auto;
+        display: grid;
+        gap: var(--small-spacing);   
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+        grid-template-areas:
+        "poster1 poster2"
+        "poster3 poster4"
+        "poster5 poster6";
+    }
+
+    .poster-cont-main { /*main poster container adjustment to apply each poster*/
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+
+    .poster-cont-main img { /*overall container image adjustment*/
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .poster-cont-main div { /*overall div adjustment for each column*/
+        padding: var(--small-spacing);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    .poster-cont-main p { /*poster text adjustment for all containers*/
+        text-align: left;
+        font-size: var(--movie-cont-font);
+    }
+
+    /*individual poster container grid application*/
+    .poster-one { 
+        grid-area: poster1; 
+    }
+    .poster-two { 
+        grid-area: poster2; 
+    }
+    .poster-three { 
+        grid-area: poster3; 
+    }
+    .poster-four { 
+        grid-area: poster4; 
+    }
+    .poster-five { 
+        grid-area: poster5; 
+    }
+    .poster-six { 
+        grid-area: poster6; 
+    }
+
+    /*poster one text and button special adjustment to align according to the wireframe*/
+    .poster-one .poster-info{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/*Phone media query*/
+@media screen and (max-width: 360px) {
+    /*header, navigation bar and button*/
+    header {
+        font-size: 0.5rem;
+    }
+    nav {
+        display: none;
+    }
+
+    header button {
+        padding: 0.75rem 0.125rem;
+    }
+
+    /*main */
+    main { /*grid display for all containers to be lined in a column*/
+        display: grid;  
+        grid-template-columns: 1fr;
+        grid-template-areas:
+
+        "poster1"
+        "poster2"
+        "poster3"
+        "poster4"
+        "poster5"
+        "poster6";
+
+        justify-items: center;
+        margin: 0 auto;
+    }
+
+    .poster-cont-main { /*all container adjustment*/
+        /*box-shadow: 0.5rem 0.5rem 0.5rem var(--shadow);*/
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .poster-cont-main img { /*all container image adjustment*/
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .poster-cont-main div { /*all container display adjustment to apply all*/
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    .poster-cont-main p { /*container text adjustment*/
+        text-align: left;
+        font-size: var(--movie-cont-font);
+    }
+
+    /*individual poster grid assignment*/
+    .poster-one { 
+        grid-area: poster1; 
+    }
+
+    .poster-two { 
+        grid-area: poster2; 
+    }
+
+    .poster-three { 
+        grid-area: poster3; 
+    }
+    .poster-four { 
+        grid-area: poster4; 
+    }
+    .poster-five { 
+        grid-area: poster5; 
+    }
+    .poster-six { 
+        grid-area: poster6; 
+    }
+
+}
